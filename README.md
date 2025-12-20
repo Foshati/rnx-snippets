@@ -33,15 +33,40 @@
 
 ## 📦 Installation
 
+### From Marketplace (Recommended)
+
 1. Open **VS Code**
 2. Go to **Extensions** (`Ctrl+Shift+X` / `Cmd+Shift+X`)
 3. Search for **"RNX Snippets"**
 4. Click **Install**
 
 Or install via command:
-```
+```bash
 ext install Foshati.rnx-snippets
 ```
+
+### 🛠 Manual Installation
+
+For **Cursor**, **Windsurf**, **Antigravity**, **VSCodium**, or offline installation:
+
+1. Download the `.vsix` file from [Releases](https://github.com/Foshati/rnx-snippets/releases)
+
+2. Install via terminal:
+```bash
+# VS Code
+code --install-extension rnx-snippets-1.0.2.vsix --force
+
+# Cursor
+cursor --install-extension rnx-snippets-1.0.2.vsix --force
+
+# Antigravity
+antigravity --install-extension rnx-snippets-1.0.2.vsix --force
+
+# VSCodium
+codium --install-extension rnx-snippets-1.0.2.vsix --force
+```
+
+3. Or drag the `.vsix` file into the Extensions view
 
 ## 🚀 Snippets
 
@@ -112,26 +137,6 @@ export default function RootLayout({ children }: Props) {
 }
 ```
 
-## 📁 Project Structure
-
-```
-rnx-snippets/
-├── public/           # Icons and assets
-│   ├── icon.png
-│   └── icon.svg
-├── src/
-│   └── snippets/     # Snippet definitions
-│       ├── ts-snippets.json
-│       └── js-snippets.json
-├── test/             # Test files
-│   ├── snippets.test.js
-│   └── validate.js
-├── package.json
-├── README.md
-├── CHANGELOG.md
-└── LICENSE
-```
-
 ## 💡 Tips
 
 1. **Tab Completion**: Type prefix + `Tab` to insert snippet
@@ -146,9 +151,6 @@ pnpm install
 
 # Run tests
 pnpm test
-
-# Validate snippets
-pnpm lint
 
 # Package extension
 pnpm pack
