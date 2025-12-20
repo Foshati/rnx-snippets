@@ -29,6 +29,7 @@
 | ⚡ **Lightning Fast** | Create components, pages, and layouts in seconds |
 | 📝 **Dual Language** | Full support for JavaScript & TypeScript |
 | 🔥 **Next.js Ready** | Optimized for Next.js 13+ App Router |
+| 🪝 **React Hooks** | Complete set of hooks snippets |
 | 🎯 **Intuitive Prefixes** | Easy-to-remember shortcuts |
 
 ## 📦 Installation
@@ -54,23 +55,36 @@ For **Cursor**, **Windsurf**, **Antigravity**, **VSCodium**, or offline installa
 2. Install via terminal:
 ```bash
 # VS Code
-code --install-extension rnx-snippets-1.0.2.vsix --force
+code --install-extension rnx-snippets-1.1.0.vsix --force
 
 # Cursor
-cursor --install-extension rnx-snippets-1.0.2.vsix --force
+cursor --install-extension rnx-snippets-1.1.0.vsix --force
 
 # Antigravity
-antigravity --install-extension rnx-snippets-1.0.2.vsix --force
+antigravity --install-extension rnx-snippets-1.1.0.vsix --force
 
 # VSCodium
-codium --install-extension rnx-snippets-1.0.2.vsix --force
+codium --install-extension rnx-snippets-1.1.0.vsix --force
 ```
 
 3. Or drag the `.vsix` file into the Extensions view
 
 ## 🚀 Snippets
 
-### TypeScript/TSX
+### 🪝 React Hooks
+
+| Prefix | Description |
+|--------|-------------|
+| `us` | useState Hook |
+| `ue` | useEffect Hook |
+| `uem` | useEffect on Mount (empty deps) |
+| `uc` | useContext Hook |
+| `ur` | useRef Hook |
+| `um` | useMemo Hook |
+| `ucb` | useCallback Hook |
+| `urd` | useReducer Hook |
+
+### 🧩 Components (TypeScript)
 
 | Prefix | Description |
 |--------|-------------|
@@ -85,7 +99,7 @@ codium --install-extension rnx-snippets-1.0.2.vsix --force
 | `ts0e` | Default Export (at bottom) |
 | `ts1e` | Named Export (at bottom) |
 
-### JavaScript/JSX
+### 🧩 Components (JavaScript)
 
 | Prefix | Description |
 |--------|-------------|
@@ -100,49 +114,89 @@ codium --install-extension rnx-snippets-1.0.2.vsix --force
 | `js0e` | Default Export (at bottom) |
 | `js1e` | Named Export (at bottom) |
 
+### 🔧 Advanced Patterns
+
+| Prefix | Description |
+|--------|-------------|
+| `tsh` / `jsh` | Custom Hook Template |
+| `tsctx` / `jsctx` | Context Provider with Hook |
+
+### 🚀 Next.js App Router
+
+| Prefix | Description |
+|--------|-------------|
+| `nuc` | 'use client' directive |
+| `nus` | 'use server' directive |
+| `tsload` / `jsload` | Loading Component |
+| `tserr` / `jserr` | Error Boundary Component |
+| `ts404` / `js404` | Not Found Page |
+| `tsapi` / `jsapi` | API Route Handler |
+| `tsmeta` | Static Metadata |
+| `tsgmeta` | Generate Metadata Function |
+| `tssa` / `jssa` | Server Action |
+
 ## 📝 Examples
 
-### `ts0` - TypeScript Default Export
+### `us` - useState Hook
 ```typescript
-export default function MyComponent() {
-  return (
-    <div>MyComponent</div>
-  )
-}
+const [count, setCount] = useState<number>(0)
 ```
 
-### `tsc` - TypeScript Component
+### `ue` - useEffect Hook
 ```typescript
-type Props = {}
-
-export const Button = ({}: Props) => {
-  return (
-    <div>Button</div>
-  )
-}
+useEffect(() => {
+  // effect
+  return () => {
+    // cleanup
+  }
+}, [dependencies])
 ```
 
-### `tsp` - TypeScript Page
+### `tsctx` - Context Provider
 ```typescript
-export default function HomePage() {
-  return (
-    <div>HomePage</div>
-  )
-}
-```
+import { createContext, useContext, useState, ReactNode } from 'react'
 
-### `tsl` - TypeScript Layout
-```typescript
-type Props = {
-  children: React.ReactNode
+type ThemeContextType = {
+  theme: string
+  setTheme: (value: string) => void
 }
 
-export default function RootLayout({ children }: Props) {
+const ThemeContext = createContext<ThemeContextType | undefined>(undefined)
+
+export function ThemeContextProvider({ children }: { children: ReactNode }) {
+  const [theme, setTheme] = useState<string>('light')
+
   return (
-    <div>
+    <ThemeContext.Provider value={{ theme, setTheme }}>
       {children}
-    </div>
+    </ThemeContext.Provider>
   )
+}
+
+export function useThemeContext() {
+  const context = useContext(ThemeContext)
+  if (!context) {
+    throw new Error('useThemeContext must be used within ThemeContextProvider')
+  }
+  return context
+}
+```
+
+### `tsapi` - API Route Handler
+```typescript
+import { NextRequest, NextResponse } from 'next/server'
+
+export async function GET(request: NextRequest) {
+  try {
+    // Your logic here
+
+    return NextResponse.json({ message: 'Success' })
+  } catch (error) {
+    return NextResponse.json(
+      { error: 'Internal Server Error' },
+      { status: 500 }
+    )
+  }
 }
 ```
 
