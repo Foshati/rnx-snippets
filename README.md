@@ -102,6 +102,15 @@ codium --install-extension rnx-snippets-1.0.2.vsix --force
 
 ## 📝 Examples
 
+### `ts0` - TypeScript Default Export
+```typescript
+export default function MyComponent() {
+  return (
+    <div>MyComponent</div>
+  )
+}
+```
+
 ### `tsc` - TypeScript Component
 ```typescript
 type Props = {}
