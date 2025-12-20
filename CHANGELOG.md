@@ -2,6 +2,15 @@
 
 All notable changes to the "RNX Snippets" extension will be documented in this file.
 
+## [1.0.3] - 2025-12-20
+
+### Added
+- 🚀 Automatic publishing to VS Code Marketplace and Open VSX
+- 📦 GitHub Releases with downloadable VSIX files
+
+### Changed
+- ⚙️ Improved CI/CD pipeline with full automation
+
 ## [1.0.2] - 2025-12-20
 
 ### Changed
