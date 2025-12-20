@@ -2,7 +2,7 @@
   "publisher": "Foshati",
   "name": "rnx-snippets",
   "displayName": "RNX Snippets",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "packageManager": "pnpm@10.22.0",
   "description": "Professional React & Next.js Snippets for JS/JSX/TS/TSX - Boost your productivity",
   "author": "Foshati",
@@ -55,12 +55,14 @@
     ]
   },
   "scripts": {
-    "test": "node test/snippets.test.js",
-    "lint": "node test/validate.js",
+    "test": "vitest",
     "publish": "vsce publish --no-dependencies",
     "pack": "vsce package --no-dependencies"
   },
   "devDependencies": {
-    "@vscode/vsce": "^3.7.0"
+    "@types/node": "^22.15.29",
+    "@vscode/vsce": "^3.7.0",
+    "typescript": "^5.8.3",
+    "vitest": "^4.0.16"
   }
 }

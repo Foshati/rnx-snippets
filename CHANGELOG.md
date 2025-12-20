@@ -2,6 +2,13 @@
 
 All notable changes to the "RNX Snippets" extension will be documented in this file.
 
+## [1.0.2] - 2025-12-20
+
+### Changed
+- 🧪 Migrated tests to TypeScript with Vitest
+- 🔧 Added GitHub Actions CI/CD workflows
+- 📊 16 comprehensive tests for snippet validation
+
 ## [1.0.1] - 2025-12-20
 
 ### Changed
