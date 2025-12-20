@@ -2,6 +2,14 @@
 
 All notable changes to the "RNX Snippets" extension will be documented in this file.
 
+## [1.0.1] - 2025-12-20
+
+### Changed
+- 📁 Reorganized project structure (src/, test/, public/)
+- 🖼️ Improved icon quality (PNG + SVG)
+- 🧪 Added test suite for snippet validation
+- 📝 Updated README with development commands
+
 ## [1.0.0] - 2025-12-20
 
 ### Added

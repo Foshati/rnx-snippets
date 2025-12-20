@@ -2,7 +2,7 @@
   "publisher": "Foshati",
   "name": "rnx-snippets",
   "displayName": "RNX Snippets",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "packageManager": "pnpm@10.22.0",
   "description": "Professional React & Next.js Snippets for JS/JSX/TS/TSX - Boost your productivity",
   "author": "Foshati",
@@ -30,7 +30,7 @@
   "categories": [
     "Snippets"
   ],
-  "icon": "images/icon.png",
+  "icon": "public/icon.png",
   "engines": {
     "vscode": "^1.80.0"
   },
@@ -38,23 +38,25 @@
     "snippets": [
       {
         "language": "typescriptreact",
-        "path": "./snippets/ts-snippets.json"
+        "path": "./src/snippets/ts-snippets.json"
       },
       {
         "language": "javascriptreact",
-        "path": "./snippets/js-snippets.json"
+        "path": "./src/snippets/js-snippets.json"
       },
       {
         "language": "typescript",
-        "path": "./snippets/ts-snippets.json"
+        "path": "./src/snippets/ts-snippets.json"
       },
       {
         "language": "javascript",
-        "path": "./snippets/js-snippets.json"
+        "path": "./src/snippets/js-snippets.json"
       }
     ]
   },
   "scripts": {
+    "test": "node test/snippets.test.js",
+    "lint": "node test/validate.js",
     "publish": "vsce publish --no-dependencies",
     "pack": "vsce package --no-dependencies"
   },

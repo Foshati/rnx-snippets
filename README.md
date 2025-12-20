@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./images/icon.png" height="128"/>
+  <img src="./public/icon.png" height="128"/>
 </p>
 
 <h1 align="center">RNX Snippets</h1>
@@ -112,11 +112,50 @@ export default function RootLayout({ children }: Props) {
 }
 ```
 
+## 📁 Project Structure
+
+```
+rnx-snippets/
+├── public/           # Icons and assets
+│   ├── icon.png
+│   └── icon.svg
+├── src/
+│   └── snippets/     # Snippet definitions
+│       ├── ts-snippets.json
+│       └── js-snippets.json
+├── test/             # Test files
+│   ├── snippets.test.js
+│   └── validate.js
+├── package.json
+├── README.md
+├── CHANGELOG.md
+└── LICENSE
+```
+
 ## 💡 Tips
 
 1. **Tab Completion**: Type prefix + `Tab` to insert snippet
 2. **Navigate Placeholders**: Use `Tab` to jump between placeholders
 3. **Auto-Rename**: Component name updates in all locations
+
+## 🧪 Development
+
+```bash
+# Install dependencies
+pnpm install
+
+# Run tests
+pnpm test
+
+# Validate snippets
+pnpm lint
+
+# Package extension
+pnpm pack
+
+# Publish extension
+pnpm publish
+```
 
 ## 🤝 Contributing
 
