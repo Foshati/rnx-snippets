@@ -1,0 +1,9 @@
+.vscode/
+node_modules/
+*.vsix
+.DS_Store
+.git/
+.gitignore
+.gitattributes
+vsc-extension-quickstart.md
+pnpm-lock.yaml

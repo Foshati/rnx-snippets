@@ -1,0 +1,138 @@
+{
+    "React-Nextjs TS Component": {
+        "prefix": "tsc",
+        "body": [
+            "type Props = {}",
+            "",
+            "export const ${1:ComponentName} = ({}: Props) => {",
+            "  return (",
+            "    <div>${1:ComponentName}</div>",
+            "  )",
+            "}"
+        ],
+        "description": "TypeScript Component with Props"
+    },
+    "React-Nextjs TS Page": {
+        "prefix": "tsp",
+        "body": [
+            "export default function ${1:PageName}() {",
+            "  return (",
+            "    <div>${1:PageName}</div>",
+            "  )",
+            "}"
+        ],
+        "description": "TypeScript Page Component"
+    },
+    "React-Nextjs TS Layout": {
+        "prefix": "tsl",
+        "body": [
+            "type Props = {",
+            "  children: React.ReactNode",
+            "}",
+            "",
+            "export default function ${1:LayoutName}({ children }: Props) {",
+            "  return (",
+            "    <div>",
+            "      {children}",
+            "    </div>",
+            "  )",
+            "}"
+        ],
+        "description": "TypeScript Layout Component"
+    },
+    "React-Nextjs TS Default Function": {
+        "prefix": "ts0",
+        "body": [
+            "export default function ${1:ComponentName}() {",
+            "  return (",
+            "    <div>${1:ComponentName}</div>",
+            "  )",
+            "}"
+        ],
+        "description": "TypeScript Default Export"
+    },
+    "React-Nextjs TS Named Function": {
+        "prefix": "ts1",
+        "body": [
+            "export const ${1:ComponentName} = () => {",
+            "  return (",
+            "    <div>${1:ComponentName}</div>",
+            "  )",
+            "}"
+        ],
+        "description": "TypeScript Named Export"
+    },
+    "React-Nextjs TS Component (Export at bottom)": {
+        "prefix": "tsce",
+        "body": [
+            "type Props = {}",
+            "",
+            "const ${1:ComponentName} = ({}: Props) => {",
+            "  return (",
+            "    <div>${1:ComponentName}</div>",
+            "  )",
+            "}",
+            "",
+            "export default ${1:ComponentName}"
+        ],
+        "description": "TS Component with Props, export at bottom"
+    },
+    "React-Nextjs TS Page (Export at bottom)": {
+        "prefix": "tspe",
+        "body": [
+            "const ${1:PageName} = () => {",
+            "  return (",
+            "    <div>${1:PageName}</div>",
+            "  )",
+            "}",
+            "",
+            "export default ${1:PageName}"
+        ],
+        "description": "TS Page Component, export at bottom"
+    },
+    "React-Nextjs TS Layout (Export at bottom)": {
+        "prefix": "tsle",
+        "body": [
+            "type Props = {",
+            "  children: React.ReactNode",
+            "}",
+            "",
+            "const ${1:LayoutName} = ({ children }: Props) => {",
+            "  return (",
+            "    <div>",
+            "      {children}",
+            "    </div>",
+            "  )",
+            "}",
+            "",
+            "export default ${1:LayoutName}"
+        ],
+        "description": "TS Layout Component, export at bottom"
+    },
+    "React-Nextjs TS Default Function (Export at bottom)": {
+        "prefix": "ts0e",
+        "body": [
+            "const ${1:ComponentName} = () => {",
+            "  return (",
+            "    <div>${1:ComponentName}</div>",
+            "  )",
+            "}",
+            "",
+            "export default ${1:ComponentName}"
+        ],
+        "description": "TS Default Export, export at bottom"
+    },
+    "React-Nextjs TS Named Function (Export at bottom)": {
+        "prefix": "ts1e",
+        "body": [
+            "const ${1:ComponentName} = () => {",
+            "  return (",
+            "    <div>${1:ComponentName}</div>",
+            "  )",
+            "}",
+            "",
+            "export { ${1:ComponentName} }"
+        ],
+        "description": "TS Named Export, export at bottom"
+    }
+}
