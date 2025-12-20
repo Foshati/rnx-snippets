@@ -152,51 +152,40 @@ useEffect(() => {
 }, [dependencies])
 ```
 
-### `tsctx` - Context Provider
+## 📝 Examples
+
+### `tsc` - TypeScript Component
 ```typescript
-import { createContext, useContext, useState, ReactNode } from 'react'
+type Props = {}
 
-type ThemeContextType = {
-  theme: string
-  setTheme: (value: string) => void
-}
-
-const ThemeContext = createContext<ThemeContextType | undefined>(undefined)
-
-export function ThemeContextProvider({ children }: { children: ReactNode }) {
-  const [theme, setTheme] = useState<string>('light')
-
+export const Button = ({}: Props) => {
   return (
-    <ThemeContext.Provider value={{ theme, setTheme }}>
-      {children}
-    </ThemeContext.Provider>
+    <div>Button</div>
   )
-}
-
-export function useThemeContext() {
-  const context = useContext(ThemeContext)
-  if (!context) {
-    throw new Error('useThemeContext must be used within ThemeContextProvider')
-  }
-  return context
 }
 ```
 
-### `tsapi` - API Route Handler
+### `tsp` - TypeScript Page
 ```typescript
-import { NextRequest, NextResponse } from 'next/server'
+export default function HomePage() {
+  return (
+    <div>HomePage</div>
+  )
+}
+```
 
-export async function GET(request: NextRequest) {
-  try {
-    // Your logic here
+### `tsl` - TypeScript Layout
+```typescript
+type Props = {
+  children: React.ReactNode
+}
 
-    return NextResponse.json({ message: 'Success' })
-  } catch (error) {
-    return NextResponse.json(
-      { error: 'Internal Server Error' },
-      { status: 500 }
-    )
-  }
+export default function RootLayout({ children }: Props) {
+  return (
+    <div>
+      {children}
+    </div>
+  )
 }
 ```
 
