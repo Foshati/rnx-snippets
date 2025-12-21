@@ -29,6 +29,7 @@
 | ⚡ **Lightning Fast** | Create components, pages, and layouts in seconds |
 | 📝 **Dual Language** | Full support for JavaScript & TypeScript |
 | 🔥 **Next.js Ready** | Optimized for Next.js 13+ App Router |
+| 🪝 **React Hooks** | Complete set of hooks snippets |
 | 🎯 **Intuitive Prefixes** | Easy-to-remember shortcuts |
 
 ## 📦 Installation
@@ -54,23 +55,36 @@ For **Cursor**, **Windsurf**, **Antigravity**, **VSCodium**, or offline installa
 2. Install via terminal:
 ```bash
 # VS Code
-code --install-extension rnx-snippets-1.0.2.vsix --force
+code --install-extension rnx-snippets-1.1.0.vsix --force
 
 # Cursor
-cursor --install-extension rnx-snippets-1.0.2.vsix --force
+cursor --install-extension rnx-snippets-1.1.0.vsix --force
 
 # Antigravity
-antigravity --install-extension rnx-snippets-1.0.2.vsix --force
+antigravity --install-extension rnx-snippets-1.1.0.vsix --force
 
 # VSCodium
-codium --install-extension rnx-snippets-1.0.2.vsix --force
+codium --install-extension rnx-snippets-1.1.0.vsix --force
 ```
 
 3. Or drag the `.vsix` file into the Extensions view
 
 ## 🚀 Snippets
 
-### TypeScript/TSX
+### 🪝 React Hooks
+
+| Prefix | Description |
+|--------|-------------|
+| `us` | useState Hook |
+| `ue` | useEffect Hook |
+| `uem` | useEffect on Mount (empty deps) |
+| `uc` | useContext Hook |
+| `ur` | useRef Hook |
+| `um` | useMemo Hook |
+| `ucb` | useCallback Hook |
+| `urd` | useReducer Hook |
+
+### 🧩 Components (TypeScript)
 
 | Prefix | Description |
 |--------|-------------|
@@ -85,7 +99,7 @@ codium --install-extension rnx-snippets-1.0.2.vsix --force
 | `ts0e` | Default Export (at bottom) |
 | `ts1e` | Named Export (at bottom) |
 
-### JavaScript/JSX
+### 🧩 Components (JavaScript)
 
 | Prefix | Description |
 |--------|-------------|
@@ -100,16 +114,45 @@ codium --install-extension rnx-snippets-1.0.2.vsix --force
 | `js0e` | Default Export (at bottom) |
 | `js1e` | Named Export (at bottom) |
 
+### 🔧 Advanced Patterns
+
+| Prefix | Description |
+|--------|-------------|
+| `tsh` / `jsh` | Custom Hook Template |
+| `tsctx` / `jsctx` | Context Provider with Hook |
+
+### 🚀 Next.js App Router
+
+| Prefix | Description |
+|--------|-------------|
+| `nuc` | 'use client' directive |
+| `nus` | 'use server' directive |
+| `tsload` / `jsload` | Loading Component |
+| `tserr` / `jserr` | Error Boundary Component |
+| `ts404` / `js404` | Not Found Page |
+| `tsapi` / `jsapi` | API Route Handler |
+| `tsmeta` | Static Metadata |
+| `tsgmeta` | Generate Metadata Function |
+| `tssa` / `jssa` | Server Action |
+
 ## 📝 Examples
 
-### `ts0` - TypeScript Default Export
+### `us` - useState Hook
 ```typescript
-export default function MyComponent() {
-  return (
-    <div>MyComponent</div>
-  )
-}
+const [count, setCount] = useState<number>(0)
 ```
+
+### `ue` - useEffect Hook
+```typescript
+useEffect(() => {
+  // effect
+  return () => {
+    // cleanup
+  }
+}, [dependencies])
+```
+
+## 📝 Examples
 
 ### `tsc` - TypeScript Component
 ```typescript

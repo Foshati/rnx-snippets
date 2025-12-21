@@ -2,7 +2,7 @@
   "publisher": "Foshati",
   "name": "rnx-snippets",
   "displayName": "RNX Snippets",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "packageManager": "pnpm@10.22.0",
   "description": "Professional React & Next.js Snippets for JS/JSX/TS/TSX - Boost your productivity",
   "author": "Foshati",

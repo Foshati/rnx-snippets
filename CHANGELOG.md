@@ -2,6 +2,36 @@
 
 All notable changes to the "RNX Snippets" extension will be documented in this file.
 
+## [1.1.0] - 2025-12-21
+
+### Added
+- 🪝 **React Hooks Snippets** - Complete set of React hooks
+  - `us` - useState hook
+  - `ue` - useEffect hook
+  - `uem` - useEffect on mount (empty deps)
+  - `uc` - useContext hook
+  - `ur` - useRef hook
+  - `um` - useMemo hook
+  - `ucb` - useCallback hook
+  - `urd` - useReducer hook
+- 🔧 **Custom Hook Templates**
+  - `tsh` / `jsh` - Custom hook boilerplate
+  - `tsctx` / `jsctx` - Context Provider with hook
+- 🚀 **Next.js App Router Snippets**
+  - `nuc` - 'use client' directive
+  - `nus` - 'use server' directive
+  - `tsload` / `jsload` - Loading component
+  - `tserr` / `jserr` - Error boundary component
+  - `ts404` / `js404` - Not Found page
+  - `tsapi` / `jsapi` - API Route Handler
+  - `tsmeta` - Static Metadata
+  - `tsgmeta` - Generate Metadata function
+  - `tssa` / `jssa` - Server Action
+
+### Changed
+- 📊 Total snippets increased from 20 to 50+
+- 📝 Improved snippet descriptions
+
 ## [1.0.3] - 2025-12-20
 
 ### Added

@@ -102,27 +102,56 @@ describe('JavaScript Snippets', () => {
 })
 
 describe('Snippet Content', () => {
-  it('TypeScript snippets have exactly 10 entries', () => {
+  // Valid prefixes for shared hooks and Next.js features
+  const VALID_SHARED_PREFIXES = ['us', 'ue', 'uem', 'uc', 'ur', 'um', 'ucb', 'urd', 'nuc', 'nus']
+  
+  it('TypeScript snippets have at least 20 entries', () => {
     const snippets = loadSnippetFile('ts-snippets.json')
-    expect(Object.keys(snippets).length).toBe(10)
+    expect(Object.keys(snippets).length).toBeGreaterThanOrEqual(20)
   })
 
-  it('JavaScript snippets have exactly 10 entries', () => {
+  it('JavaScript snippets have at least 20 entries', () => {
     const snippets = loadSnippetFile('js-snippets.json')
-    expect(Object.keys(snippets).length).toBe(10)
+    expect(Object.keys(snippets).length).toBeGreaterThanOrEqual(20)
   })
 
-  it('TypeScript prefixes start with "ts"', () => {
+  it('TypeScript prefixes are valid', () => {
     const snippets = loadSnippetFile('ts-snippets.json')
     for (const snippet of Object.values(snippets)) {
-      expect(snippet.prefix.startsWith('ts')).toBe(true)
+      const isValid = snippet.prefix.startsWith('ts') || VALID_SHARED_PREFIXES.includes(snippet.prefix)
+      expect(isValid, `Invalid prefix: ${snippet.prefix}`).toBe(true)
     }
   })
 
-  it('JavaScript prefixes start with "js"', () => {
+  it('JavaScript prefixes are valid', () => {
     const snippets = loadSnippetFile('js-snippets.json')
     for (const snippet of Object.values(snippets)) {
-      expect(snippet.prefix.startsWith('js')).toBe(true)
+      const isValid = snippet.prefix.startsWith('js') || VALID_SHARED_PREFIXES.includes(snippet.prefix)
+      expect(isValid, `Invalid prefix: ${snippet.prefix}`).toBe(true)
     }
+  })
+
+  it('includes React hooks snippets', () => {
+    const snippets = loadSnippetFile('ts-snippets.json')
+    const prefixes = Object.values(snippets).map(s => s.prefix)
+    
+    expect(prefixes).toContain('us')   // useState
+    expect(prefixes).toContain('ue')   // useEffect
+    expect(prefixes).toContain('uc')   // useContext
+    expect(prefixes).toContain('ur')   // useRef
+    expect(prefixes).toContain('um')   // useMemo
+    expect(prefixes).toContain('ucb')  // useCallback
+  })
+
+  it('includes Next.js App Router snippets', () => {
+    const snippets = loadSnippetFile('ts-snippets.json')
+    const prefixes = Object.values(snippets).map(s => s.prefix)
+    
+    expect(prefixes).toContain('nuc')     // use client
+    expect(prefixes).toContain('nus')     // use server
+    expect(prefixes).toContain('tsload')  // loading
+    expect(prefixes).toContain('tserr')   // error
+    expect(prefixes).toContain('ts404')   // not found
+    expect(prefixes).toContain('tsapi')   // API route
   })
 })
