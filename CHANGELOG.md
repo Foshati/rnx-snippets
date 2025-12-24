@@ -32,6 +32,20 @@ All notable changes to the "RNX Snippets" extension will be documented in this f
 - 📊 Total snippets increased from 20 to 50+
 - 📝 Improved snippet descriptions
 
+### 🛠 Manual Installation
+Download `rnx-snippets-1.1.0.vsix` and run:
+
+```bash
+# VS Code
+code --install-extension rnx-snippets-1.1.0.vsix --force
+
+# Cursor
+cursor --install-extension rnx-snippets-1.1.0.vsix --force
+
+# Antigravity
+antigravity --install-extension rnx-snippets-1.1.0.vsix --force
+```
+
 ## [1.0.3] - 2025-12-20
 
 ### Added
